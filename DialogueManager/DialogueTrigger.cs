@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public Dialogue dialogue;
+    public Dialogue[] dialogue;
     public bool title;
     public bool subtitle;
     public AudioSource source;
@@ -26,7 +26,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         dialogueStarted = true;
         FindObjectOfType<DialogueManager>().CanvasBools(title,subtitle);
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue,source);
+        FindObjectOfType<DialogueManager>().StartDialogue(dialogue[LanguageManager.Language],source);
         
     }
 
